@@ -4,7 +4,10 @@ services:
     container_name: ollama
     environment:
       OLLAMA_MODELS: /root/.ollama/models
+      # Set for RX 6700s (gfx1032), adjust for your GPU.
       HSA_OVERRIDE_GFX_VERSION: "10.3.0"
+      # Makes use of dGPU which goes as "0" on my laptop, YMMV.
+      # Change to other indices to switch it to another GPU (e.g. "1" for iGPU).
       HIP_VISIBLE_DEVICES: "0"
     devices:
       - "/dev/kfd"
