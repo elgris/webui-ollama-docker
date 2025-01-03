@@ -28,14 +28,9 @@ services:
     environment:
       # Change to `true` if you need auth (login, user registration, etc).
       WEBUI_AUTH: false
-      # TODO: replace all of these with `OFFLINE_MODE: true`
-      # once https://github.com/open-webui/open-webui/pull/7741
-      # gets into the recent docker image.
-      # You might want to enable these on the first start so that OpenWebUI
-      # can download inital state.
-      RAG_EMBEDDING_MODEL_AUTO_UPDATE: false
-      RAG_RERANKING_MODEL_AUTO_UPDATE: false
-      WHISPER_MODEL_AUTO_UPDATE: false
+      # You might want to enable this on the first start so that OpenWebUI
+      # can setup the inital state.
+      OFFLINE_MODE: false
       OLLAMA_BASE_URL: http://10.1.0.2:11434
     volumes:
       - $HOME/.open-webui:/app/backend/data:Z
