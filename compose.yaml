@@ -30,7 +30,7 @@ services:
       WEBUI_AUTH: false
       # You might want to enable this on the first start so that OpenWebUI
       # can setup the inital state.
-      OFFLINE_MODE: false
+      OFFLINE_MODE: true
       OLLAMA_BASE_URL: http://10.1.0.2:11434
     volumes:
       - $HOME/.open-webui:/app/backend/data:Z
